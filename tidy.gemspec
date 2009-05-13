@@ -19,10 +19,10 @@ VERSION
 
 spec = Gem::Specification.new do |s|
   s.name = 'tidy'
-  s.version = "1.1.3"
-  s.author = 'Kevin Howe'
+  s.version = "1.1.4"
+  s.authors = ['Kevin Howe','Pelle Braendgaard']
   s.email = 'kh@newclear.ca'
-  s.homepage = 'http://github.com/railsmonk/tidy-fork'
+  s.homepage = 'http://github.com/pelle/tidy'
   s.platform = Gem::Platform::RUBY
   s.summary = 'Forked Ruby interface to HTML Tidy Library Project with important bugfixes'
   s.files = MANIFEST

@@ -33,6 +33,7 @@ module Tidy
   # Return a Tidyobj instance.
   #
   def new(options=nil)
+    deduce_load_path
     Tidyobj.new(options)
   end
   
@@ -78,6 +79,13 @@ module Tidy
   #
   def to_b(value)
     [0,false,nil].include?(value) ? false : true
+  end
+  
+  # Naive way of finding the load path. There has to be a better way .
+  def deduce_load_path
+    unless @path
+      Tidy.path=['/usr/lib','/usr/local/lib','/opt/lib','/opt/local/lib'].collect{|p| ['libtidy.so','libtidy.dylib'].collect{|l| "#{p}/#{l}"}}.flatten.detect{|p|File.exist?(p)}
+    end
   end
 
 end
